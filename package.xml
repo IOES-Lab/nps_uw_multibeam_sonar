@@ -4,7 +4,7 @@
   <name>nps_uw_multibeam_sonar</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="helenamoyen@usp.br">lena</maintainer>
+  <maintainer email="helenamoyen@usp.br">Helena Moyen</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>

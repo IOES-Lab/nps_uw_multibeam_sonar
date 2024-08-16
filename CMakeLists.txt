@@ -15,6 +15,10 @@ find_package(rclcpp REQUIRED)
 include_directories(${CUDA_INCLUDE_DIRS})
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_60")
 
+install(
+  DIRECTORY worlds launch
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -27,5 +31,10 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+# Environment hooks
+ament_environment_hooks(
+"${CMAKE_CURRENT_SOURCE_DIR}/hooks/${PROJECT_NAME}.dsv.in")
+
 
 ament_package()
